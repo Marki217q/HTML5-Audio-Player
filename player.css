@@ -1,0 +1,282 @@
+
+@font-face {
+  font-family: 'pietplay';
+  src: url('font/pietplay.eot?67998494');
+  src: url('font/pietplay.eot?67998494#iefix') format('embedded-opentype'),
+       url('font/pietplay.woff2?67998494') format('woff2'),
+       url('font/pietplay.woff?67998494') format('woff'),
+       url('font/pietplay.ttf?67998494') format('truetype'),
+       url('font/pietplay.svg?67998494#pietplay') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'pietplay';
+    src: url('../font/pietplay.svg?67998494#pietplay') format('svg');
+  }
+}
+*/
+ 
+ [class^="ic-"]:before, [class*=" ic-"]:before {
+  font-family: "pietplay";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.ic-pause:before { content: '\e800'; } /* '?' */
+.ic-play:before { content: '\e801'; } /* '?' */
+.ic-next:before { content: '\e802'; } /* '?' */
+.ic-prev:before { content: '\e803'; } /* '?' */
+.ic-menu:before { content: '\e804'; } /* '?' */
+.ic-volume-down:before { content: '\e805'; } /* '?' */
+.ic-volume-up:before { content: '\e806'; } /* '?' */
+.ic-volume-off:before { content: '\e807'; } /* '?' */
+
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body
+{
+	background:#1f1f1f;
+	width:500px;
+	height:350px;
+	font-family:"Lato", sans-serif;
+}
+
+
+div.player
+{
+	width:490px;
+	padding:5px;
+	height:340px;
+	background-color:#000;
+	box-shadow:inset 0 -250px 250px #000;
+	background-repeat:no-repeat;
+	background-size:100% auto;
+	overflow:hidden;
+	display:flex;
+	flex-direction:column;
+	justify-content:flex-end;
+	border-radius:10px 10px 10px 10px;
+}
+
+div.player h1.title
+{
+	color:#fff;
+	font-weight:400;
+	font-size:35px;
+	padding:5px 0;
+}
+
+div.player h3.episode
+{
+	padding:2px 0;
+	color:#b5b5b2;
+	font-weight:400;
+	font-size:28px;
+
+}
+
+div.player section.length
+{
+	padding:25px 0 15px;
+	color:#b5b5b2;
+	font-size:20px;
+	
+}
+
+section.length span.currentpos
+{
+	color:#fff;
+
+}
+	
+section.length span.duration
+{
+	float:right;
+}
+
+div.player div.progressbar
+{
+	border:solid 1px #555555;
+	height:6px;
+	border-radius:6px;
+	margin:0;
+	position:relative;
+	cursor:pointer;
+}
+
+div.progressbar span.loaded
+{
+	height:6px;
+	border-radius:6px;
+	width:0%;
+	position:absolute;
+	background:rgba(255,255,255,0.1);
+	display:block;
+	cursor:pointer;
+}
+
+div.progressbar:hover > span.current
+{
+	background:#6df10a;
+	border-color:#6df10a;
+}
+
+
+
+div.progressbar span.current
+{
+	height:6px;
+	border-radius:6px;
+	width:0%;
+	position:absolute;
+	background:#fff;
+	display:block;
+	border:1px solid #fff;
+	top:-1px;
+	left:-1px;
+	transition:linear width 0.25s;
+	cursor:pointer;
+}
+
+div.player div.controls
+{
+	color:#fff;
+	padding:30px 0;
+	height:32px;
+	line-height:32px;
+	display:block;
+	font-family:"pietplay";
+	text-align:center;
+	font-size:45px;
+	
+}
+
+div.player div.controls i
+{
+	cursor:pointer;
+	float:middle;
+}
+
+div.player div.controls a
+{
+	float:left;
+	padding:0 5px;
+}
+
+div.player div.controls .ic-menu
+{
+	
+	color:#7e7e7e;
+	float:right;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
